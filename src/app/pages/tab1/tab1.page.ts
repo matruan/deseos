@@ -29,27 +29,35 @@ export class Tab1Page {
       ],
       buttons: [
         {
-        text: 'Cancelar',
-        role: 'cancel',
-        handler: () => {
-          console.log('Cancelar');
+          text: 'Cancelar',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancelar');
           }
         },
         {
-        text: 'Crear',
-        handler: (data) => {
-          console.log(data);
-          if (data.titulo.length === 0) {
-            return;
-          }
-          const listaId = this.deseosService.crearLista(data.titulo);
+          text: 'Crear',
+          handler: (data) => {
+            console.log(data);
+            if (data.titulo.length === 0) {
+              return;
+            }
+            const listaId = this.deseosService.crearLista(data.titulo);
 
-          this.router.navigate([`/tabs/tab1/agregar/${ listaId }`]);
+            this.router.navigate([`/tabs/tab1/agregar/${listaId}`]);
+          }
         }
-        }
-        ]
+      ]
     });
 
     alert.present();
+
   }
+
+  listaSeleccionada(lista: Lista) {
+    console.log(lista);
+    this.router.navigate([`tabs/tab1/agregar/${lista.id}`]);
+  }
+
 }
+
