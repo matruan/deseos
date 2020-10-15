@@ -27,7 +27,7 @@ export class AgregarPage implements OnInit {
   }
 
   agregarItem() {
-    if ( this.nombreItem.length === 0) { 
+    if ( this.nombreItem.length === 0) {
       return;
     }
 

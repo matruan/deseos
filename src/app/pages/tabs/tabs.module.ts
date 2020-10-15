@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -13,7 +14,8 @@ import { TabsPage } from './tabs.page';
     IonicModule,
     CommonModule,
     FormsModule,
-    TabsPageRoutingModule
+    TabsPageRoutingModule,
+    RouterModule.forChild([{ path: '', component: TabsPage }])
   ],
   declarations: [TabsPage]
 })
